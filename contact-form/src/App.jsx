@@ -1,11 +1,12 @@
 import { useState } from 'react'
+import "bootstrap/scss/bootstrap.scss";
 
 
 function App() {
  
 
   return (
-    <div className='container' >
+    <div className="container py-5">
       <div className="row">
         <div className="col">
       <h2>ارسال به مدیریت</h2>

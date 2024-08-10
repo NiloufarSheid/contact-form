@@ -3,7 +3,17 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  list-style: none;
+  text-decoration: none;
+  direction: rtl;
+}
+body{
+  background: linear-gradient(159deg,rgb(87, 87, 150),rgb(212, 101, 212),rgb(248, 198, 207));
+  height: 100vh;
 }
 .container{
   display: flex;
+}
+.col{
+
 }

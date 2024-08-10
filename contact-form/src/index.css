@@ -5,15 +5,19 @@
   outline: none;
   list-style: none;
   text-decoration: none;
-  direction: rtl;
+ 
 }
 body{
   background: linear-gradient(159deg,rgb(87, 87, 150),rgb(212, 101, 212),rgb(248, 198, 207));
   height: 100vh;
+  direction: rtl;
 }
-.container{
-  display: flex;
-}
-.col{
 
+textarea{
+  height: 120px !important;
+  resize: none;
+}
+.form-control{
+  border: none !important;
+  border-bottom: 1px solid #ced4da !important;
 }

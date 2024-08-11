@@ -1,5 +1,7 @@
 import emailjs from "emailjs-com"
 import "bootstrap/scss/bootstrap.scss";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -9,9 +11,11 @@ function App() {
     
     emailjs.sendForm("service_xe424eg", "template_08wz54f", e.target, "FF3iTvnxqEB9hNvOj")
       .then((result) => {
-        console.log(result.text); 
+        if(result.status===200){
+          toast.success("پیام شما با موفقیت ارسال شد" , {position:"top-right", closeOnClick:true})
+        }
       }, (error) => {
-        console.log(error.text); 
+        console.log(error); 
       });
   };
 
@@ -38,6 +42,7 @@ function App() {
 
       </div>
       </div>
+      <ToastContainer />
     </div>
   )
 }

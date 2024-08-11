@@ -1,16 +1,26 @@
-import { useState } from 'react'
+import emailjs from "emailjs-com"
 import "bootstrap/scss/bootstrap.scss";
 
 
+
 function App() {
- 
+  const sendEmail = (e) => {
+    e.preventDefault(); 
+    
+    emailjs.sendForm("service_xe424eg", "template_08wz54f", e.target, "FF3iTvnxqEB9hNvOj")
+      .then((result) => {
+        console.log(result.text); 
+      }, (error) => {
+        console.log(error.text); 
+      });
+  };
 
   return (
     <div className="container py-5">
       <div className="row py-5 justify-content-center">
         <div className="col-md-4 bg-white p-5 mt-5 ">
       <h2 className='pb-5 text-center' >ارسال به مدیریت</h2>
-      <form >
+      <form onSubmit={sendEmail}>
       <div className="form-group">
         <input name='name' className='form-control p-3' type="text" placeholder='نام'/>
         </div>
@@ -22,7 +32,7 @@ function App() {
         <textarea className='form-control p-3' name="message" id="" cols="30" rows="10" placeholder='پیام شما'></textarea>
       </div>
       <div className="form-group">
-        <input type='submit' className='btn btn-success w-100 p-2 mt-5'  />
+        <input type='submit' className='btn btn-success w-100 p-2 mt-5' value="ارسال"  />
       </div>
       </form>
 
